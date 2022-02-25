@@ -1,0 +1,98 @@
+{
+  "Services": [
+    {
+      "Url": "https://api.github.com/",
+      "Endpoints": [
+        {
+          "Headers": {
+            "Authorization": "token @ApiKey",
+            "User-Agent": "CoveoIndexer"
+          },
+          "Path": "orgs/opencv/repos",
+          "Method": "GET",
+          "ItemType": "code_repository",
+          "Uri": "%[html_url]",
+          "ModifiedDate": "%[raw.pushed_at]",
+          "ClickableUri": "%[html_url]",
+          "Title": "%[title]",
+          "Metadata": {
+            "code_org": "OpenCV",
+            "code_origin": "GitHub",
+            "code_repo": "%[name]",
+            "code_code_folders": "GitHub;GitHub|OpenCV;GitHub|OpenCV|%[name];",
+            "parents": "<?xml version=\"1.0\" encoding=\"utf-16\"?><parents><parent name=\"GitHub\" uri=\"https://github.com/\" /><parent name=\"OpenCV\" uri=\"https://github.com/OpenCV\" /><parent name=\"%[name]\" uri=\"%[html_url]\" /></parents>",
+            "printableuri": "%[html_url]",
+            "title": "%[path]"
+          },
+          "SubItems": [
+            {
+              "Headers": {
+                "Authorization": "token @ApiKey",
+                "User-Agent": "CoveoIndexer"
+              },
+              "Path": "repos/opencv/%[coveo_parent.raw.name]/branches/%[coveo_parent.raw.default_branch]",
+              "Method": "GET",
+              "ItemType": "code_branch",
+              "Uri": "%[_links.html]",
+              "ClickableUri": "%[_links.html]",
+              "Title": "%[title]",
+              "ModifiedDate": "%[raw.commit.commit.committer.date]",
+              "Metadata": {
+                "code_org": "OpenCV",
+                "code_origin": "GitHub",
+                "code_repo": "%[coveo_parent.raw.name]",
+                "code_branch": "%[coveo_parent.raw.default_branch]",
+                "code_folders": "GitHub;GitHub|OpenCV;GitHub|OpenCV|%[coveo_parent.raw.name];GitHub|OpenCV|%[coveo_parent.raw.name]|%[coveo_parent.raw.default_branch];",
+                "parents": "<?xml version=\"1.0\" encoding=\"utf-16\"?><parents><parent name=\"GitHub\" uri=\"https://github.com/\" /><parent name=\"OpenCV\" uri=\"https://github.com/OpenCV\" /><parent name=\"%[coveo_parent.raw.name]\" uri=\"%[_links.html]\" /><parent name=\"%[coveo_parent.raw.default_branch]\" uri=\"%[_links.html]\"/></parents>",
+                "printableuri": "%[_links.html]",
+                "title": "%[path]"
+              },
+              "SubItems": [
+                {
+                  "Headers": {
+                    "Authorization": "token @ApiKey",
+                    "User-Agent": "CoveoIndexer"
+                  },
+                  "Path": "repos/opencv/%[coveo_parent.coveo_parent.raw.name]/git/trees/%[coveo_parent.raw.commit.sha]",
+                  "QueryParameters": {
+                    "recursive": "1"
+                  },
+                  "Method": "GET",
+                  "ItemPath": "tree",
+                  "ItemType": "SourceCode",
+                  "Uri": "%[coveo_parent.raw._links.html]/%[path]",
+                  "ClickableUri": "%[coveo_parent.raw._links.html]",
+                  "Title": "%[title]",
+                  "ModifiedDate": "%[coveo_parent.raw.commit.commit.committer.date]",
+                  "Body": "%[content]",
+                  "SubQueries": [
+                    {
+                      "Headers": {
+                        "Authorization": "token @ApiKey",
+                        "User-Agent": "CoveoIndexer"
+                      },
+                      "Path": "https://raw.githubusercontent.com/opencv/%[coveo_parent.coveo_parent.coveo_parent.raw.name]/%[coveo_parent.coveo_parent.coveo_parent.raw.default_branch]/%[coveo_parent.raw.path]",
+                      "Method": "GET",
+                      "IsBinaryBody": true
+                    }
+                  ],
+                  "Metadata": {
+                    "code_org": "OpenCV",
+                    "code_origin": "GitHub",
+                    "code_repo": "%[coveo_parent.coveo_parent.raw.name]",
+                    "code_branch": "%[coveo_parent.coveo_parent.raw.default_branch]",
+                    "code_folders": "GitHub;GitHub|OpenCV;GitHub|OpenCV|%[coveo_parent.coveo_parent.raw.name];GitHub|OpenCV|%[coveo_parent.coveo_parent.raw.name]|%[coveo_parent.coveo_parent.raw.default_branch];",
+                    "parents": "<?xml version=\"1.0\" encoding=\"utf-16\"?><parents><parent name=\"GitHub\" uri=\"https://github.com/\" /><parent name=\"OpenCV\" uri=\"https://github.com/OpenCV\" /><parent name=\"%[coveo_parent.coveo_parent.raw.name]\" uri=\"%[coveo_parent.raw._links.html]\" /><parent name=\"%[coveo_parent.coveo_parent.raw.default_branch]\" uri=\"%[coveo_parent.raw._links.html]\"/></parents>",
+                    "author": "%[coveo_parent.raw.commit.commit.author.name]",
+                    "printableuri": "%[coveo_parent.raw._links.self]/%[path]",
+                    "title": "%[path]"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
