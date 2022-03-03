@@ -44,7 +44,7 @@
                 "code_repo": "%[coveo_parent.raw.name]",
                 "code_branch": "%[coveo_parent.raw.default_branch]",
                 "code_folders": "GitHub;GitHub|Coveo;GitHub|Coveo|%[coveo_parent.raw.name];GitHub|Coveo|%[coveo_parent.raw.name]|%[coveo_parent.raw.default_branch];",
-                "parents": "<?xml version=\"1.0\" encoding=\"utf-16\"?><parents><parent name=\"GitHub\" uri=\"https://github.com/\" /><parent name=\"Coveo\" uri=\"https://github.com/coveo\" /><parent name=\"%[coveo_parent.raw.name]\" uri=\"%[_links.html]\" /><parent name=\"%[coveo_parent.raw.default_branch]\" uri=\"%[_links.html]\"/></parents>",
+                "parents": "<?xml version=\"1.0\" encoding=\"utf-16\"?><parents><parent name=\"GitHub\" uri=\"https://github.com/\" /><parent name=\"Coveo\" uri=\"https://github.com/coveo\" /><parent name=\"%[coveo_parent.raw.name]\" uri=\"%[_links.html]\" /></parents>",
                 "printableuri": "%[_links.html]",
                 "title": "%[path]"
               },
@@ -62,7 +62,7 @@
                   "ItemPath": "tree",
                   "ItemType": "SourceCode",
                   "Uri": "%[coveo_parent.raw._links.html]/%[path]",
-                  "ClickableUri": "%[coveo_parent.raw._links.html]",
+                  "ClickableUri": "%[coveo_parent.raw._links.html]/%[path]",
                   "Title": "%[title]",
                   "ModifiedDate": "%[coveo_parent.raw.commit.commit.committer.date]",
                   "Body": "%[content]",
@@ -83,7 +83,7 @@
                     "code_repo": "%[coveo_parent.coveo_parent.raw.name]",
                     "code_branch": "%[coveo_parent.coveo_parent.raw.default_branch]",
                     "code_folders": "GitHub;GitHub|Coveo;GitHub|Coveo|%[coveo_parent.coveo_parent.raw.name];GitHub|Coveo|%[coveo_parent.coveo_parent.raw.name]|%[coveo_parent.coveo_parent.raw.default_branch];",
-                    "parents": "<?xml version=\"1.0\" encoding=\"utf-16\"?><parents><parent name=\"GitHub\" uri=\"https://github.com/\" /><parent name=\"Coveo\" uri=\"https://github.com/coveo\" /><parent name=\"%[coveo_parent.coveo_parent.raw.name]\" uri=\"%[coveo_parent.raw._links.html]\" /><parent name=\"%[coveo_parent.coveo_parent.raw.default_branch]\" uri=\"%[coveo_parent.raw._links.html]\"/></parents>",
+                    "parents": "<?xml version=\"1.0\" encoding=\"utf-16\"?><parents><parent name=\"GitHub\" uri=\"https://github.com/\" /><parent name=\"Coveo\" uri=\"https://github.com/coveo\" /><parent name=\"%[coveo_parent.coveo_parent.raw.name]\" uri=\"%[coveo_parent.raw._links.html]\" /></parents>",
                     "author": "%[coveo_parent.raw.commit.commit.author.name]",
                     "printableuri": "%[coveo_parent.raw._links.self]/%[path]",
                     "title": "%[path]"

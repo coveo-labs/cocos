@@ -1,0 +1,365 @@
+:root {
+  --spacing: 16px;
+  --search-box-width: 648px;
+  
+}
+
+body {
+  margin: 0;
+}
+
+body.atomic-modal-opened {
+  overflow-y: hidden;
+}
+
+/*atomic-color-facet::part() {
+  background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original-wordmark.svg) !important;
+  background-size: auto;
+  background-position: bottom;
+  background-color: red;
+  background-repeat: no-repeat;
+}*/
+
+atomic-color-facet::part(value-ts) {
+  background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg);
+  background-size: auto;
+  background-position: bottom;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+atomic-color-facet::part(value-tsx) {
+  background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg);
+  background-size: auto;
+  background-position: bottom;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+
+atomic-color-facet::part(value-json) {
+  background-image: url(/json.svg);
+  background-size: auto;
+  background-position: bottom;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+atomic-color-facet::part(value-py) {
+  background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original-wordmark.svg);
+  background-size: auto;
+  background-position: bottom;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+atomic-color-facet::part(value-js) {
+  background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg);
+  background-size: auto;
+  background-position: bottom;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+atomic-color-facet::part(value-cpp) {
+  background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg);
+  background-size: auto;
+  background-position: bottom;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+atomic-color-facet::part(value-c) {
+  background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg);
+  background-size: auto;
+  background-position: bottom;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+atomic-color-facet::part(value-coffee) {
+  background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/coffeescript/coffeescript-original-wordmark.svg);
+  background-size: auto;
+  background-position: bottom;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+atomic-color-facet::part(value-cs) {
+  background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg);
+  background-size: auto;
+  background-position: bottom;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+atomic-color-facet::part(value-css) {
+  background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg);
+  background-size: auto;
+  background-position: bottom;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+atomic-color-facet::part(value-gitignore) {
+  background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg);
+  background-size: auto;
+  background-position: bottom;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+
+atomic-color-facet::part(value-go) {
+  background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg);
+  background-size: auto;
+  background-position: bottom;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+atomic-color-facet::part(value-h) {
+  background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg);
+  background-size: auto;
+  background-position: bottom;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+atomic-color-facet::part(value-hpp) {
+  background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg);
+  background-size: auto;
+  background-position: bottom;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+atomic-color-facet::part(value-html) {
+  background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg);
+  background-size: auto;
+  background-position: bottom;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+atomic-color-facet::part(value-java) {
+  background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg);
+  background-size: auto;
+  background-position: bottom;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+atomic-color-facet::part(value-markdown) {
+  background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg);
+  background-size: auto;
+  background-position: bottom;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+atomic-color-facet::part(value-md) {
+  background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg);
+  background-size: auto;
+  background-position: bottom;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+atomic-color-facet::part(value-php) {
+  background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg);
+  background-size: auto;
+  background-position: bottom;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+atomic-color-facet::part(value-scala) {
+  background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scala/scala-original-wordmark.svg);
+  background-size: auto;
+  background-position: bottom;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+atomic-color-facet::part(value-scss) {
+  background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg);
+  background-size: auto;
+  background-position: bottom;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+atomic-color-facet::part(value-sh) {
+  background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg);
+  background-size: auto;
+  background-position: bottom;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+atomic-color-facet::part(value-svg) {
+  background-image: url(/svg.svg);
+  background-size: auto;
+  background-position: bottom;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+atomic-color-facet::part(value-swift) {
+  background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original-wordmark.svg);
+  background-size: auto;
+  background-position: bottom;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+atomic-color-facet::part(value-tf) {
+  background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original-wordmark.svg);
+  background-size: auto;
+  background-position: bottom;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+atomic-color-facet::part(value-txt) {
+  background-image: url(/txt.svg);
+  background-size: auto;
+  background-position: bottom;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+atomic-color-facet::part(value-unix) {
+  background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unix/unix-original.svg);
+  background-size: auto;
+  background-position: bottom;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+atomic-color-facet::part(value-vue) {
+  background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original-wordmark.svg);
+  background-size: auto;
+  background-position: bottom;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+atomic-color-facet::part(value-xaml) {
+  background-image: url(/json.svg);
+  background-size: auto;
+  background-position: bottom;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+atomic-color-facet::part(value-yaml) {
+  background-image: url(/json.svg);
+  background-size: auto;
+  background-position: bottom;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+atomic-color-facet::part(value-yml) {
+  background-image: url(/json.svg);
+  background-size: auto;
+  background-position: bottom;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+
+atomic-result::before {
+  margin: 0.5rem 0px;
+}
+
+
+atomic-search-interface {
+  display: grid;
+  grid-template-columns: var(--spacing) 1fr var(--spacing);
+  grid-template-areas:
+    '. search      .'
+    '. status      .'
+    '. breadbox    .'
+    '. topbar      .'
+    '. results     .'
+    '. pagination  .'
+    '. .           .';
+}
+
+.header-bg {
+  background-color: #000;
+    background-image: url(/top.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-filter: blur(1px);
+    grid-area: 1 / -1 / 1 / 1;
+}
+
+atomic-facet-manager {
+  display: none;
+}
+
+atomic-sort-dropdown {
+  display: none;
+}
+
+atomic-search-box {
+  grid-area: search;
+  margin: var(--spacing) 0;
+  max-width: var(--search-box-width);
+  height: 3rem;
+}
+
+.status {
+  grid-area: status;
+}
+
+atomic-facet-manager {
+  grid-area: facets;
+  margin-top: var(--spacing);
+}
+
+atomic-facet-manager > * {
+  margin-bottom: var(--spacing);
+}
+
+atomic-breadbox {
+  grid-area: breadbox;
+  margin-top: var(--spacing);
+  padding-bottom: var(--spacing);
+  border-bottom: 1px solid var(--atomic-neutral);
+}
+
+.topbar {
+  grid-area: topbar;
+  margin: var(--spacing) 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.results {
+  grid-area: results;
+}
+
+atomic-result::before{
+  margin: 07.5rem 0px !important;
+}
+
+.pagination {
+  grid-area: pagination;
+  margin: var(--spacing) 0;
+}
+
+.atomic-search-interface-no-results .topbar,
+.atomic-search-interface-no-results .results,
+.atomic-search-interface-no-results .pagination {
+  display: none;
+}
+
+@media only screen and (min-width: 1024px) {
+  atomic-search-interface {
+    column-gap: var(--spacing);
+    grid-template-columns: 1fr minmax(150px, 325px) minmax(500px, 1100px) 1fr;
+    grid-template-areas:
+      '. .      search      .'
+      '. facets breadbox .'
+      '. facets topbar      .'
+      '. facets results     .'
+      '. facets pagination  .'
+      '. facets status      .'
+      '. facets .           .';
+  }
+  .list-root.display-list.density-normal > ::before {
+    margin: 0.5rem 0px;
+  } 
+
+  atomic-facet-manager {
+    display: block;
+  }
+
+  atomic-refine-toggle {
+    display: none;
+  }
+
+  atomic-sort-dropdown {
+    display: block;
+  }
+
+  .status {
+    max-width: var(--search-box-width);
+  }
+}

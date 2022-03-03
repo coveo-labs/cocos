@@ -32,5 +32,5 @@ coveo auth:login -o=cocospf4amx00
 
 Create Atomic Page
 ```cmd
-coveo ui:create:react cocos_ui
+coveo ui:create:atomic atomic_ui
 ```

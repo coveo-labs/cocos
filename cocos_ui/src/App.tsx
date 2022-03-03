@@ -49,7 +49,7 @@ const Home = () => {
       <div className="App">
         <Hero
           logos={[logo, coveologo]}
-          welcome="Welcome to Your Coveo React.js Search Page"
+          welcome="Welcome to CoCoS (Coveo Code Search)"
         />
         {engine && <SearchPage engine={engine} />}
       </div>

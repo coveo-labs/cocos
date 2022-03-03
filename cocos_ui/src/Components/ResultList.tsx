@@ -75,12 +75,18 @@ const ResultListRenderer: FunctionComponent<ResultListProps> = (props) => {
               </Typography>
             </Box>
           )}
-
-          {result.raw.source && (
-            <FieldValue caption="Source" value={result.raw.source} />
+         
+          {result.raw.code_origin && (
+            <FieldValue caption="Origin" value={result.raw.code_origin} />
           )}
-          {result.raw.objecttype && (
-            <FieldValue caption="Object Type" value={result.raw.objecttype} />
+          {result.raw.code_org && (
+            <FieldValue caption="Org" value={result.raw.code_org} />
+          )}
+          {result.raw.code_repo && (
+            <FieldValue caption="Repo" value={result.raw.code_repo} />
+          )}
+          {result.raw.code_branch && (
+            <FieldValue caption="Branch" value={result.raw.code_branch} />
           )}
         </Box>
       </ListItem>

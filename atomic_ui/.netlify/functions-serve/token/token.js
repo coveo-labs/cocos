@@ -1,0 +1,1 @@
+module.exports = require('./src/lambda/functions/token/token.js')

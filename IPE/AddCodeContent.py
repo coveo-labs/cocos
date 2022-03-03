@@ -36,8 +36,13 @@ def getMetaAll(fieldtoset, content, regex):
             result=''  
     return result   
 
-title=document.get_meta_data_value('title')[0]
-
+title=''
+try:
+	title=document.get_meta_data_value('title')[0]
+except:
+    pass
+alldata=[]
+alltext=''
 try:
   original_data = document.get_data_stream('documentdata')
   alltext = original_data.read().decode()

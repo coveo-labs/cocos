@@ -1,0 +1,8 @@
+b {
+  color: var(--atomic-primary);
+}
+
+img {
+  width:5rem;
+  height:5rem;
+}
