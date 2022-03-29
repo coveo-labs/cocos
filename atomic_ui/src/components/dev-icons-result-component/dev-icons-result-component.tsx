@@ -1,5 +1,5 @@
 import {Result} from '@coveo/atomic/headless';
-import {Component, h, Element, State} from '@stencil/core';
+import {Component, h, Element, State, Prop} from '@stencil/core';
 import {resultContext} from '@coveo/atomic';
 
 /**
@@ -18,12 +18,17 @@ export class DevIconsResultComponent {
   // The Headless result object to be resolved from the parent atomic-result component.
   @State() private result?: Result;
   @Element() private host!: Element;
+  @Prop() public currentResult?: Result;
 
   // We recommended fetching the result context using the `connectedCallback` lifecycle method
   // with async/await. Using `componentWillLoad` will hang the parent `atomic-search-interface` initialization.
   public async connectedCallback() {
     try {
-      this.result = await resultContext(this.host);
+      if (this.currentResult) {
+        this.result = this.currentResult;
+      } else {
+        this.result = await resultContext(this.host);
+      }
     } catch (error) {
       console.error(error);
       this.host.remove();
@@ -80,7 +85,7 @@ export class DevIconsResultComponent {
       icon_image = icon.icon;
     }
     return (
-      <img src={icon_image}/>
+      <img part="code_image" src={icon_image}/>
     );
   }
 }

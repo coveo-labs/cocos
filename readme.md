@@ -34,3 +34,8 @@ Create Atomic Page
 ```cmd
 coveo ui:create:atomic atomic_ui
 ```
+
+## In case of errors, update your headless installation
+```cmd
+npm i @coveo/atomic@latest @coveo/headless@latest
+```

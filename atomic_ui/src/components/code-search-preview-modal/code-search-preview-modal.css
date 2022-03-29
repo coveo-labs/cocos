@@ -1,0 +1,271 @@
+.shadow-lg {
+  --tw-shadow: 0px -2px 8px rgba(229, 232, 232, 0.75);
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+.background {
+  position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+    background-color:aliceblue;
+    display: none;
+}
+.img {
+  width: 26px;
+  height: 26px;
+}
+.modal-content {
+  /*position: absolute;
+  top: 1%;
+  left: 10%;
+  transform: translate(-10%, -10%);
+  background-color: white;
+  padding: 1rem 1.5rem;
+  width: 80%;
+  height: 80%;
+  border-radius: 0.5rem;*/
+}
+
+.close-button {
+  float: right;
+  width: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  background-color: lightgray;
+}
+
+.close-button:hover {
+  background-color: darkgray;
+}
+
+select:hover + div,
+select:focus-visible + div {
+  @apply text-primary-light;
+}
+
+.centered {
+  margin-left: 15px;
+    margin-right: 15px;
+    overflow:auto/scroll;
+   
+    /*width: 80%;
+    max-width: 32rem;*/
+}
+/*
+code-search-preview-modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: gray;
+  opacity: 1;
+  display: none;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+  z-index: 2;
+}
+.coveo-modal-content {
+    font-family: Helvetica;
+    font-size: 14px;
+    padding: 10px 10px 5px 10px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 2px;
+    min-width: 400px;
+}*/
+/*.coveo-modal-backdrop, code-search-preview-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+code-search-preview-modal {
+  align-items: center;
+  justify-content: center;
+  z-index: 1050;
+  display: flex;
+  visibility: hidden;
+  pointer-events: none;
+}
+code-search-preview-modal .coveo-modal-content {
+  position: relative;
+  flex-direction: column;
+  display: flex;
+  width: 45%;
+  height: 50%;
+  opacity: 0;
+  pointer-events: auto;
+}
+.coveo-modal-content {
+  width: 95% !important;
+  height: 85% !important;
+}*/
+.adjust-for-scroll-bar {
+  /* Explanation:
+  100 vw = full width of the view port including the scrollbar.
+  (100% + 3rem) = width of the div the CSS class is on, plus the padding added by the parent div.
+  The difference is the width of the scroll bar.
+  The value is multiplied by -1 to shift right by the width of the scrollbar.
+  */
+  /*margin-right: calc(-1 * (100vw - 3rem - 100%));*/
+  height: calc( (60vh));
+  overflow: auto;
+}
+
+code-search-preview-modal {
+  position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 150;
+    background-color:aliceblue;
+    display: none;
+    
+   }
+.container {
+  background-color:white;
+    border: 2px solid rgb(229, 232, 232);
+    border-radius: var(--atomic-border-radius-lg);
+    opacity: 1 !important;
+    position: relative;
+    overflow: auto/scroll;
+    position: "center"
+    /*overflow: auto/scroll;*/
+    /*width: 85% !important;
+    height: 85% !important;*/
+    /*top: 20px;*/
+}
+.highlight {
+  background-color: #53f1df;
+  font-size: 12pt;
+}
+.header {
+  border-bottom: 2px solid rgb(229, 232, 232);
+}
+
+.title {
+  font-family: var(--atomic-font-family);
+    font-weight: var(--atomic-font-normal);
+    --font-size: var(--atomic-text-xl);
+    font-size: var(--font-size);
+}
+
+.title svg {
+  fill: currentColor;
+}
+
+.text-on-background {
+  color: var(--atomic-on-background);
+}
+
+.bg-background {
+  background-color: var(--atomic-background);
+}
+
+.text-xl {
+  font-size: var(--atomic-text-xl);
+}
+
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.animate-scaleUpRefineModal {
+  animation: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0s 1 normal forwards running scaleUp;
+}
+
+.w-screen {
+  width: 80vw;
+}
+
+.h-screen {
+  height: 40vw;
+}
+
+.flex {
+  display: flex;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+.top-0 {
+  /*top: 10%;*/
+}
+
+.left-0 {
+  left: 10%;
+}
+
+.fixed {
+  /*position: absolute;*/
+}
+
+.mycode {
+  font-family: courier;
+    font-variant: normal !important;
+    font-weight: normal !important;
+    font-size: 14px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.btn-text-transparent:hover {
+  color: var(--atomic-primary-light);
+}
+.ripple-parent {
+  overflow: hidden;
+}
+.ripple-relative {
+  position: relative;
+}
+.place-items-center {
+  place-items: center;
+}
+.grid {
+  display: grid;
+}
+.btn-text-transparent {
+  border-radius: var(--atomic-border-radius);
+  background-color: var(--atomic-background);
+  color: var(--atomic-on-background);
+}
