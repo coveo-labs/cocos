@@ -86,12 +86,12 @@ export class CodeSearchComponent {
     return string.replace(/'/gm,'"')
   }
 
-  private cleanEx(code:string) {
+  /*private cleanEx(code:string) {
     return (code+"").replace(/&#\d+;/gm,function(s) {
       //@ts-ignore
       return String.fromCharCode(s.match(/\d+/gm)[0]);
   })
-  }
+  }*/
 
   private escape(string:any) {
     return this.clean(string.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'))

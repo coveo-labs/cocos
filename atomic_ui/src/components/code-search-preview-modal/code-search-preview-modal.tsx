@@ -6,8 +6,6 @@ import {
 
 import hljs from 'highlight.js';
 
-import CloseIcon from 'coveo-styleguide/resources/icons/svg/close.svg';
-
 export type ModalStatus = 'closed' | 'opened' | 'beingClosed';
 
 /**

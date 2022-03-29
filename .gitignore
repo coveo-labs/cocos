@@ -26,3 +26,6 @@ data/catalog/*.json
 .next/
 .serverless/
 .serverless_nextjs/
+
+# Local Netlify folder
+.netlify
