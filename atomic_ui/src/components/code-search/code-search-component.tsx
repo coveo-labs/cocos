@@ -161,11 +161,7 @@ export class CodeSearchComponent {
   }
 
   public cleanQuery(query:String) {
-    query = query.replace(',',' ');
-    query = query.replace('>',' ');
-    query = query.replace('<',' ');
-    query = query.replace(')',' ');
-    query = query.replace('(',' ');
+    query= query.replace(/[^A-Za-z0-9., ]+/gm,' ');
     return query;
   }
 
