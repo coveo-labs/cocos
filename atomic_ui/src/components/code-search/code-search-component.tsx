@@ -172,8 +172,8 @@ export class CodeSearchComponent {
         // body.facets = [...];
         this.currentSearchString = body.q;
         body.q = this.replaceQuery(body.q);
-        if (this.checkboxDQ) {
-          body.dq = this.currentSearchString + this.buildAQ(body);
+        if (this.checkedDQ) {
+          body.dq = this.currentSearchString.replace(',',' ') + this.buildAQ(body);
         }
         request.body = JSON.stringify(body);
   
@@ -274,11 +274,15 @@ export class CodeSearchComponent {
 
   public render() {
     return (
-      <div  class="codeSearch flex items-center flex-wrap text-on-background">
+      <div  class="codeSearch  items-center flex-wrap text-on-background">
+        <div>
           <input type="checkbox" class="first" title="Code search will replace special characters" onClick={this.toggleSwitch.bind(this)}  ref={el => this.checkbox = el as HTMLInputElement} checked={this.checked}/>
         {this.renderLabel()}
+        </div>
+        <div>
         <input type="checkbox" title="Add the current query also as DQ to the query" onClick={this.toggleSwitchDQ.bind(this)}  ref={el => this.checkboxDQ = el as HTMLInputElement} checked={this.checkedDQ}/>
         {this.renderLabelDQ()}
+        </div>
       </div>
     );
   

@@ -63,7 +63,7 @@ select:focus-visible + div {
 .centered {
   margin-left: 15px;
     margin-right: 15px;
-    overflow:auto/scroll;
+    overflow:auto;
    
     /*width: 80%;
     max-width: 32rem;*/
@@ -133,7 +133,7 @@ code-search-preview-modal .coveo-modal-content {
   The value is multiplied by -1 to shift right by the width of the scrollbar.
   */
   /*margin-right: calc(-1 * (100vw - 3rem - 100%));*/
-  height: calc( (60vh));
+  height: calc( (50vh));
   overflow: auto;
 }
 
