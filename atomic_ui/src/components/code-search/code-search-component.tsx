@@ -160,6 +160,15 @@ export class CodeSearchComponent {
     return aq;
   }
 
+  public cleanQuery(query:String) {
+    query = query.replace(',',' ');
+    query = query.replace('>',' ');
+    query = query.replace('<',' ');
+    query = query.replace(')',' ');
+    query = query.replace('(',' ');
+    return query;
+  }
+
   @Method() public async fixQuery(request:any, clientOrigin:any) {
     if (clientOrigin === 'searchApiFetch') {
       if (this.bindings==undefined) {
@@ -173,7 +182,7 @@ export class CodeSearchComponent {
         this.currentSearchString = body.q;
         body.q = this.replaceQuery(body.q);
         if (this.checkedDQ) {
-          body.dq = this.currentSearchString.replace(',',' ') + this.buildAQ(body);
+          body.dq = this.cleanQuery(this.currentSearchString) + this.buildAQ(body);
         }
         request.body = JSON.stringify(body);
   

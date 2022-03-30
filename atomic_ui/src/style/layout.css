@@ -25,6 +25,18 @@ body.atomic-modal-opened {
   display: block;
 }
 
+
+.indexeditems {
+  font-family: var(--atomic-font-family);
+  font-weight: var(--atomic-font-normal);
+  font-size: small;
+  border: 1px solid var(--atomic-neutral);
+  padding: 5px;
+  border-radius: 3px;
+  display: block;
+  margin-bottom: 5px;
+}
+
 /*atomic-color-facet::part() {
   background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original-wordmark.svg) !important;
   background-size: auto;
@@ -351,7 +363,7 @@ recently-opened-component {
   max-width:250px;
   grid-column-start: 4;
     grid-row-start: 2;
-    grid-row-end: 6;
+    grid-row-end: 8;
 }
 @media only screen and (max-width: 1024px) {
   

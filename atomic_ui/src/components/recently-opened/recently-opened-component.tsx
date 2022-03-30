@@ -40,7 +40,7 @@ export class RecentlyOpenedComponent {
       
       this.recentQueriesListController = buildRecentResultsList(this.bindings.engine,{
         initialState: {results: this.retrieveLocalStorage()},
-        options: {maxLength: 1000},
+        options: {maxLength: 10},
       });
 
       // Subscribe to controller state changes.
@@ -64,14 +64,14 @@ export class RecentlyOpenedComponent {
   private retrieveLocalStorage() {
     let jsond= localStorage.getItem('RECENT');
     if (jsond) {
-      return JSON.parse(jsond);
+      return JSON.parse(jsond).slice(0,10);
     } else return [];
   }
 
   private updateLocalStorage() {
     return localStorage.setItem(
       'RECENT',
-      JSON.stringify(this.recentQueriesListController?.state.results)
+      JSON.stringify(this.recentQueriesListController?.state.results.slice(0,10))
     );
   }
 
