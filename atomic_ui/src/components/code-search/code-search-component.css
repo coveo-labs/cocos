@@ -6,7 +6,7 @@ code-search-component {
   padding:5px;
   background-color: aliceblue;
   float: right;
-  margin-top: 25px;
+  margin-top: 15px;
   width:110px;
 }
 @media only screen and (max-width: 1330px) {
@@ -26,6 +26,9 @@ code-search-component {
   }
 }
 
+.first {
+  margin-bottom:8px;
+}
 .switch {
   position: relative;
   display: inline-block;

@@ -11,6 +11,7 @@ export namespace Components {
     interface CodeSearchComponent {
         "checked": boolean;
         "checkedColor": string;
+        "checkedDQ": boolean;
         "fixQuery": (request: any, clientOrigin: any) => Promise<any>;
         "fixResults": (response: any) => Promise<any>;
         "type": string;
@@ -90,6 +91,7 @@ declare namespace LocalJSX {
     interface CodeSearchComponent {
         "checked"?: boolean;
         "checkedColor"?: string;
+        "checkedDQ"?: boolean;
         "type"?: string;
         "uncheckedColor"?: string;
     }

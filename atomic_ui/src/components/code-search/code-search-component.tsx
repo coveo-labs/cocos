@@ -27,6 +27,7 @@ enum CodeSearchMode{
 export class CodeSearchComponent {
   private bindings?: Bindings;
   private checkbox!: HTMLInputElement;
+  private checkboxDQ!: HTMLInputElement;
   private currentSearchString: String;
 
   constructor() {
@@ -38,6 +39,7 @@ export class CodeSearchComponent {
   @Prop() checkedColor: string = "#2196F3";
   @Prop() uncheckedColor: string = "#ccc";
   @Prop({mutable: true}) checked: boolean = true;
+  @Prop({mutable: true}) checkedDQ: boolean = true;
   
   @State() private mode!: CodeSearchMode;
 
@@ -138,6 +140,26 @@ export class CodeSearchComponent {
     else return response;
   }
 
+  public buildAQ(body:any) {
+    let aq='';
+    body.facets.map((facet:any)=>{
+       let field = facet.field;
+       //@ts-ignore
+       let values = [];
+       facet.currentValues.map((value:any)=>{
+         if (value.state=="selected") {
+            values.push('"'+value.value+'"');
+         }
+       });
+       
+       if (values.length>0) {
+         //@ts-ignore
+        aq+= " @"+field+"=("+values.join(',')+")";
+       }
+    });
+    return aq;
+  }
+
   @Method() public async fixQuery(request:any, clientOrigin:any) {
     if (clientOrigin === 'searchApiFetch') {
       if (this.bindings==undefined) {
@@ -150,6 +172,9 @@ export class CodeSearchComponent {
         // body.facets = [...];
         this.currentSearchString = body.q;
         body.q = this.replaceQuery(body.q);
+        if (this.checkboxDQ) {
+          body.dq = this.currentSearchString + this.buildAQ(body);
+        }
         request.body = JSON.stringify(body);
   
       } else 
@@ -189,7 +214,23 @@ export class CodeSearchComponent {
     if (this.checked) {
       this.enableCodeSearch();
     } else {
+      //Disable DQ, does not makes sense to do it
+      this.checkboxDQ.checked = false;
+      this.checkedDQ = this.checkboxDQ.checked;
       this.enableNativeSearch();
+    }
+  }
+
+  private toggleSwitchDQ() {
+    //this.checkbox.checked = !this.checkbox.checked;
+    this.checkedDQ = this.checkboxDQ.checked;
+    //this.background.style.setProperty('background', this.checked ? this.checkedColor : this.uncheckedColor)
+    if (this.checkedDQ) {
+      this.checked = this.checkbox.checked;
+      this.checkbox.checked = true;
+      this.enableCodeSearch();
+    } else {
+      this.executeSearch();
     }
   }
 
@@ -212,11 +253,32 @@ export class CodeSearchComponent {
     );
   }
 
+  private renderLabelDQ() {
+    let text="";
+    if (this.checkedDQ) {
+      text="Add DQ";
+  } else {
+    text="Not using DQ";
+  }
+
+  return (
+      <label
+        class="m-2 font-bold text-sm cursor-pointer"
+        part="label"
+        
+      >
+        {text}
+      </label>
+    );
+  }
+
   public render() {
     return (
       <div  class="codeSearch flex items-center flex-wrap text-on-background">
-          <input type="checkbox" onClick={this.toggleSwitch.bind(this)}  ref={el => this.checkbox = el as HTMLInputElement} checked={this.checked}/>
+          <input type="checkbox" class="first" title="Code search will replace special characters" onClick={this.toggleSwitch.bind(this)}  ref={el => this.checkbox = el as HTMLInputElement} checked={this.checked}/>
         {this.renderLabel()}
+        <input type="checkbox" title="Add the current query also as DQ to the query" onClick={this.toggleSwitchDQ.bind(this)}  ref={el => this.checkboxDQ = el as HTMLInputElement} checked={this.checkedDQ}/>
+        {this.renderLabelDQ()}
       </div>
     );
   
