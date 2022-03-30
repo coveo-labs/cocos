@@ -2,7 +2,7 @@ import re
 
 def replaceCharacters(text):
   new_text=''
-  pattern = re.compile("[A-Za-z0-9.\(\) ]+")
+  pattern = re.compile("[A-Za-z0-9.\(\), ]+")
   for ch in text:
     if pattern.fullmatch(ch) is not None:
       new_text+=ch
@@ -19,7 +19,7 @@ print (text)
 text=replaceCharacters(text)
 print (text)
 
-text = " Mat img = imread(samples::findFile(argv[i]));"
+text = "tag: 'atomic-result-printable-uri',"
 print (text)
 text=replaceCharacters(text)
 print (text)

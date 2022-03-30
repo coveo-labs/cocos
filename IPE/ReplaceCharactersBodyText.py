@@ -39,7 +39,7 @@ def getMetaAll(fieldtoset, content, regex):
 
 def replaceCharacters(text):
   new_text=''
-  pattern = re.compile("[A-Za-z0-9.\(\) ]+")
+  pattern = re.compile("[A-Za-z0-9.\(\), ]+")
   for ch in text:
     if pattern.fullmatch(ch) is not None:
       new_text+=ch

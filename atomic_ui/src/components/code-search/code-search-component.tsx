@@ -47,7 +47,7 @@ export class CodeSearchComponent {
 
   private replaceQuery(query:String) {
     let newquery='';
-    var re = new RegExp('[A-Za-z0-9.\(\) ]+');
+    var re = new RegExp('[A-Za-z0-9.\(\), ]+');
     for (var i = 0; i < query.length; i++) {
       let char=query.charAt(i);
       if (re.test(char)) {
