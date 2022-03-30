@@ -9,19 +9,20 @@ Goto:
 And insert the [Fields](Fields\\AddFields.json).
 
 ## Add Extension
-Add the [Extension](IPE\\AddCodeContent.py).
+Add the [Extension](IPE\\ReplaceCharactersBodyText.py).
 
-** Make sure to enable 'Original File' **
+** Make sure to enable 'Body Text' **
 
 ## Add Sources
 Add the Source.
 * Insert your ApiKey
 * Insert the JSON
 
-Enable the extension `AddCodeContent`.
+Enable the extension `ReplaceCharactersBodyText` as `post-conversion` script.
 
 
 ## Add Pipelines
+The ones you need
 
 ## Create the UI
 Install CLI
@@ -39,3 +40,14 @@ coveo ui:create:atomic atomic_ui
 ```cmd
 npm i @coveo/atomic@latest @coveo/headless@latest
 ```
+
+### Deploy to Netlify
+Create a site in [Netlify](https://app.netlify.com/sites).
+Copy that `siteId` and put it in `.netlify\state.json`.
+
+```cmd
+npm run site:deploy
+```
+
+The above will also update your app with the `.env` settings.
+

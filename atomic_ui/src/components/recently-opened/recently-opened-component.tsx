@@ -87,7 +87,7 @@ export class RecentlyOpenedComponent {
   }
   public render() {
     if (this.recentState?.results?.length==0) {
-      return (<div>NOTHING</div>);
+      return (<span></span>);
     } else 
     return (
       <div>
