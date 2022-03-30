@@ -28,6 +28,7 @@ export class CodeSearchComponent {
   private bindings?: Bindings;
   private checkbox!: HTMLInputElement;
   private checkboxDQ!: HTMLInputElement;
+  private checkboxDebug!: HTMLInputElement;
   private currentSearchString: String;
 
   constructor() {
@@ -40,6 +41,7 @@ export class CodeSearchComponent {
   @Prop() uncheckedColor: string = "#ccc";
   @Prop({mutable: true}) checked: boolean = true;
   @Prop({mutable: true}) checkedDQ: boolean = true;
+  @Prop({mutable: true}) checkedDebug: boolean = false;
   
   @State() private mode!: CodeSearchMode;
 
@@ -177,6 +179,7 @@ export class CodeSearchComponent {
         // body.facets = [...];
         this.currentSearchString = body.q;
         body.q = this.replaceQuery(body.q);
+        if (this.checkedDebug) body.debug = true;
         if (this.checkedDQ) {
           body.dq = this.cleanQuery(this.currentSearchString) + this.buildAQ(body);
         }
@@ -239,6 +242,13 @@ export class CodeSearchComponent {
     }
   }
 
+  private toggleSwitchDebug() {
+    //this.checkbox.checked = !this.checkbox.checked;
+    this.checkedDebug = this.checkboxDebug.checked;
+    //this.background.style.setProperty('background', this.checked ? this.checkedColor : this.uncheckedColor)
+    this.executeSearch();
+  }
+
   private renderLabel() {
     let text="";
     if (this.mode==CodeSearchMode.Code) {
@@ -277,6 +287,25 @@ export class CodeSearchComponent {
     );
   }
 
+  private renderLabelDebug() {
+    let text="";
+    if (this.checkedDebug) {
+      text="Debug enabled";
+  } else {
+    text="Debug disabled";
+  }
+
+  return (
+      <label
+        class="m-2 font-bold text-sm cursor-pointer"
+        part="label"
+        
+      >
+        {text}
+      </label>
+    );
+  }
+
   public render() {
     return (
       <div  class="codeSearch  items-center flex-wrap text-on-background">
@@ -285,8 +314,12 @@ export class CodeSearchComponent {
         {this.renderLabel()}
         </div>
         <div>
-        <input type="checkbox" title="Add the current query also as DQ to the query" onClick={this.toggleSwitchDQ.bind(this)}  ref={el => this.checkboxDQ = el as HTMLInputElement} checked={this.checkedDQ}/>
+        <input type="checkbox" class="first" title="Add the current query also as DQ to the query" onClick={this.toggleSwitchDQ.bind(this)}  ref={el => this.checkboxDQ = el as HTMLInputElement} checked={this.checkedDQ}/>
         {this.renderLabelDQ()}
+        </div>
+        <div>
+        <input type="checkbox" title="Debug Query" onClick={this.toggleSwitchDebug.bind(this)}  ref={el => this.checkboxDebug = el as HTMLInputElement} checked={this.checkedDebug}/>
+        {this.renderLabelDebug()}
         </div>
       </div>
     );

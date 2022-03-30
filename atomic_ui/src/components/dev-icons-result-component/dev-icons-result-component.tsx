@@ -66,7 +66,7 @@ export class DevIconsResultComponent {
     {"ext":".sh", "icon":'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg'},
     {"ext":".svg", "icon":'svg.svg'},
     {"ext":".swift", "icon":'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original-wordmark.svg'},
-    {"ext":".tf", "icon":'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original-wordmark.svg'},
+    {"ext":".tf", "icon":'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original-wordmark.svg'},
     {"ext":".txt", "icon":'txt.svg'},
     {"ext":".unix", "icon":'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unix/unix-original.svg'},
     {"ext":".vue", "icon":'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original-wordmark.svg'},

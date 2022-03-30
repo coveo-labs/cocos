@@ -12,6 +12,7 @@ export namespace Components {
         "checked": boolean;
         "checkedColor": string;
         "checkedDQ": boolean;
+        "checkedDebug": boolean;
         "fixQuery": (request: any, clientOrigin: any) => Promise<any>;
         "fixResults": (response: any) => Promise<any>;
         "type": string;
@@ -92,6 +93,7 @@ declare namespace LocalJSX {
         "checked"?: boolean;
         "checkedColor"?: string;
         "checkedDQ"?: boolean;
+        "checkedDebug"?: boolean;
         "type"?: string;
         "uncheckedColor"?: string;
     }

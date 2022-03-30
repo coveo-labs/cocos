@@ -6,8 +6,8 @@ code-search-component {
   padding:5px;
   background-color: aliceblue;
   float: right;
-  margin-top: 15px;
-  width:110px;
+  margin-top: 5px;
+  width:120px;
 }
 @media only screen and (max-width: 1330px) {
   code-search-component {
