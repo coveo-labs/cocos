@@ -16,6 +16,7 @@
           },
           "Method": "GET",
           "ItemType": "code_repository",
+          "ItemPath":"items",
           "Uri": "%[html_url]",
           "ModifiedDate": "%[raw.pushed_at]",
           "ClickableUri": "%[html_url]",

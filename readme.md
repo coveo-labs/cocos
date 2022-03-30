@@ -20,6 +20,7 @@ Add the Source.
 
 Enable the extension `ReplaceCharactersBodyText` as `post-conversion` script.
 
+Fix the configuration json. Click on your source `Edit Json`. Tab `Configuration`, Look for the `documentConfig` setting and replace it with the contents from `Sources\configuration.json`.
 
 ## Add Pipelines
 The ones you need
