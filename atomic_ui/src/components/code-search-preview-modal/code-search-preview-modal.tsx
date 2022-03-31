@@ -54,11 +54,14 @@ export class CodeSearchPreviewModal  {
       case 'opened':
         document.body.classList.add(modalOpenedClass);
         this.host.classList.add(modalOpenedClass);
+        //Causes visibility issues
+        this.host.classList.remove('hydrated');
         this.focusOnCloseButton();
         break;
       case 'closed':
         this.host.classList.remove(modalOpenedClass);
         document.body.classList.remove(modalOpenedClass);
+        this.host.classList.remove('hydrated');
         this.focusOnOpenButton();
         break;
     }
@@ -175,14 +178,18 @@ export class CodeSearchPreviewModal  {
   /*
             class={`modal-content container w-screen  fixed flex flex-col  bg-background text-on-background left-0 top-0 z-10  ${
           class={`coveo-modal-content w-screen  fixed flex flex-col  bg-background text-on-background left-0 top-0 z-10  ${
-*/
+          class={`container2 w-screen h-screen fixed flex flex-col justify-between bg-background text-on-background left-0 top-0 z-10   ${
+        <div class={`background ${isOpened ? 'atomic-modal-opened':''}`} onClick={() => this.dismiss()} >
+overflow-auto px-6 grow">
+          style={setTop}
+            */
   public render() {
     if (this.modalStatus === 'closed') {
       return;
     }
 
     const isOpened = this.modalStatus === 'opened';
-    const setTop = {'top':Math.round(this.top+100)+'px'};
+    const setTop = {'top':Math.round(this.top+50)+'px'};
     return (
       <atomic-focus-trap active={isOpened}>
         <div class={`background ${isOpened ? 'atomic-modal-opened':''}`} onClick={() => this.dismiss()} >
@@ -190,7 +197,7 @@ export class CodeSearchPreviewModal  {
           part="container"
           style={setTop}
           onClick={(e)=>{e.stopPropagation();}}
-          class={`container w-screen h-screen fixed flex flex-col justify-between bg-background text-on-background left-0 top-0 z-10   ${
+          class={`container2   ${
             isOpened
               ? 'animate-scaleUpRefineModal'
               : 'animate-slideDownRefineModal'
@@ -199,9 +206,9 @@ export class CodeSearchPreviewModal  {
         >
           <div class="px-6">{this.renderHeader()}</div>
           
-          <div class="overflow-auto px-6 grow">
-            <div class="adjust-for-scroll-bar">
-              <aside class="centered">
+          <div class="contents">
+            <div class="adjust-for-scroll-bar2">
+              <aside class="centered2">
               {this.renderCode()}
               </aside>
             </div>
