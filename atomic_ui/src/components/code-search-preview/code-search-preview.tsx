@@ -42,9 +42,8 @@ export class CodeSearchPreviewResultComponent {
         this.qvState = this.controller.state;
         if (this.qvState.isLoading == false && this.qvState.content != "") {
           this.loading = false;
-          //offsetParnet
           let title = this.result?.title || "";
-          let top = this.host.parentElement?.scrollTop || 0;
+          let top = (this.host as HTMLElement).offsetParent?.scrollTop || 0;
           this.modalRef && this.modalRef.open(this.qvState.content, title, top);
         }
       });
