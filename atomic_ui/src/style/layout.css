@@ -1,13 +1,12 @@
 :root {
   --spacing: 16px;
   --search-box-width: 648px;
-  
 }
 
 body {
   margin: 0;
   -webkit-filter: blur(0);
-          filter: blur(0);
+  filter: blur(0);
   opacity: 1;
   -webkit-transition: opacity 500ms ease, -webkit-filter 500ms ease;
   transition: opacity 500ms ease, -webkit-filter 500ms ease;
@@ -18,13 +17,11 @@ body {
 
 body.atomic-modal-opened {
   /*overflow-y: unset;*/
-  
 }
 
 .atomic-modal-opened {
   visibility: visible;
 }
-
 
 .indexeditems {
   font-family: var(--atomic-font-family);
@@ -269,30 +266,28 @@ atomic-result::before {
   margin: 0.5rem 0px;
 }
 
-
 atomic-search-interface {
   display: grid;
   grid-template-columns: var(--spacing) 1fr var(--spacing);
   grid-template-areas:
-    '. search      .'
-    '. status      .'
-    '. breadbox    .'
-    '. topbar      .'
-    '. results     .'
-    '. pagination  .'
-    '. .           .';
+    ". search      ."
+    ". status      ."
+    ". breadbox    ."
+    ". topbar      ."
+    ". results     ."
+    ". pagination  ."
+    ". .           .";
 }
 
 .header-bg {
   background-color: #000;
-    background-image: url(/top.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: left;
-    background-filter: blur(1px);
-    grid-area: 1 / -1 / 1 / 1;
+  background-image: url(/top.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-filter: blur(1px);
+  grid-area: 1 / -1 / 1 / 1;
 }
-
 
 atomic-facet-manager {
   display: none;
@@ -341,10 +336,10 @@ atomic-breadbox {
   grid-area: results;
 }
 
-atomic-result::before{
+atomic-result::before {
   margin: 07.5rem 0px !important;
 }
- 
+
 .pagination {
   grid-area: pagination;
   margin: var(--spacing) 0;
@@ -356,37 +351,37 @@ atomic-result::before{
   display: none;
 }
 
-
 recently-opened-component {
   font-family: var(--atomic-font-family);
   min-width: 250px;
-  max-width:250px;
+  max-width: 250px;
   grid-column-start: 4;
-    grid-row-start: 2;
-    grid-row-end: 8;
+  grid-row-start: 2;
+  grid-row-end: 8;
 }
 @media only screen and (max-width: 1024px) {
-  
-recently-opened-component {
-  display:none;
+  recently-opened-component {
+    display: none;
   }
 }
 @media only screen and (min-width: 1024px) {
   atomic-search-interface {
     column-gap: var(--spacing);
-    grid-template-columns: 1fr minmax(150px, 325px) minmax(500px, 1100px) minmax(250px,250px) 1fr;
+    grid-template-columns:
+      1fr minmax(150px, 325px) minmax(500px, 1100px) minmax(250px, 250px)
+      1fr;
     grid-template-areas:
-      '. .      search      . .'
-      '. facets breadbox . .'
-      '. facets topbar      . .'
-      '. facets results     . .'
-      '. facets pagination  . .'
-      '. facets status      . .'
-      '. facets .           . .';
+      ". .      search      . ."
+      ". facets breadbox . ."
+      ". facets topbar      . ."
+      ". facets results     . ."
+      ". facets pagination  . ."
+      ". facets status      . ."
+      ". facets .           . .";
   }
   .list-root.display-list.density-normal > ::before {
     margin: 0.5rem 0px;
-  } 
+  }
 
   atomic-facet-manager {
     display: block;

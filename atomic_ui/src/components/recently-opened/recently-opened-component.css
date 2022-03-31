@@ -1,8 +1,6 @@
-
-
 .small::part(code_image) {
-  width:24px;
-  height:24px;
+  width: 24px;
+  height: 24px;
   vertical-align: text-top;
 }
 
@@ -10,27 +8,35 @@
   list-style: none;
   margin-block-start: 0px !important;
   padding-inline-start: 0px !important;
-  
 }
 .title {
   font-weight: var(--atomic-font-bold);
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    padding-top: 0.25rem;
-    padding-bottom: 1.25rem;
-    display:block;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 1.25rem;
+  display: block;
 }
 
-a:link { text-decoration: none; color: var(--atomic-on-background);}
+a:link {
+  text-decoration: none;
+  color: var(--atomic-on-background);
+}
 
+a:visited {
+  text-decoration: none;
+  color: var(--atomic-on-background);
+}
 
-a:visited { text-decoration: none;color: var(--atomic-on-background); }
+a:hover {
+  text-decoration: underline;
+  color: var(--atomic-primary);
+}
 
-
-a:hover { text-decoration: underline;color: var(--atomic-primary); }
-
-
-a:active { text-decoration: none; color: var(--atomic-on-background);}
+a:active {
+  text-decoration: none;
+  color: var(--atomic-on-background);
+}
 
 div {
   margin-top: var(--spacing);
@@ -42,8 +48,7 @@ div {
   margin-right: 5px;
 }
 .recentList li {
-  padding-bottom:15px;
-
+  padding-bottom: 15px;
 }
 .recentListItem {
   width: 80%;

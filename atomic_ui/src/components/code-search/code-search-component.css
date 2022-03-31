@@ -1,41 +1,40 @@
 code-search-component {
   font-family: var(--atomic-font-family);
   font-size: small;
-  border-radius:5px;
-  border:2px solid var(--atomic-primary);
-  padding:5px;
+  border-radius: 5px;
+  border: 2px solid var(--atomic-primary);
+  padding: 5px;
   background-color: aliceblue;
   float: right;
   margin-top: 5px;
-  width:120px;
+  width: 120px;
 }
 @media only screen and (max-width: 1330px) {
   code-search-component {
     float: left;
-      margin-left: 15;
+    margin-left: 15;
   }
 }
 @media only screen and (max-width: 1000px) {
   code-search-component {
     float: none;
-      display: block;
-      margin-top: 25px;
-      width: 110px;
-      margin-top: 70;
-      margin-left: 15;
+    display: block;
+    margin-top: 25px;
+    width: 110px;
+    margin-top: 70;
+    margin-left: 15;
   }
 }
 
 .first {
-  margin-bottom:8px;
+  margin-bottom: 8px;
 }
-
 
 .switch {
   position: relative;
   display: inline-block;
   width: 40px;
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 .switch .label {
@@ -47,12 +46,20 @@ code-search-component {
   top: 3px;
 }
 /* Hide default HTML checkbox */
-.switch input {display:none;}
-.codeSearch input {transform : scale(2);line-height: 10px;
+.switch input {
+  display: none;
+}
+.codeSearch input {
+  transform: scale(2);
+  line-height: 10px;
   height: 10px;
-  vertical-align: middle;}
-.codeSearch label {padding-left:5px;line-height: 15px;
-  vertical-align: middle;}
+  vertical-align: middle;
+}
+.codeSearch label {
+  padding-left: 5px;
+  line-height: 15px;
+  vertical-align: middle;
+}
 /* The slider */
 .slider {
   position: absolute;
@@ -62,9 +69,8 @@ code-search-component {
   right: 0;
   bottom: 0;
   /*background-color: #ccc;*/
-  -webkit-transition: .4s;
-  transition: .4s;
-  
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -75,16 +81,16 @@ code-search-component {
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #2196f3;
 }
 
 input:checked + .slider:before {

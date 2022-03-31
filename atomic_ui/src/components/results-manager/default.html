@@ -29,8 +29,8 @@
     color: white;
   }
   .printuri {
-    grid-area: -1/2/-1/span 4;
-    display:flex;
+    grid-area: -1/2/-1 / span 4;
+    display: flex;
   }
   .print {
     padding-left: 10px;
@@ -39,7 +39,7 @@
     grid-column: 1 / span 1;
   }
   .image-icon {
-    grid-template-rows: repeat(7, auto)  !important;
+    grid-template-rows: repeat(7, auto) !important;
   }
   :host::before {
     margin: 0.8rem !important;
@@ -47,25 +47,28 @@
 </style>
 
 <atomic-result-section-visual class="icon">
-
   <dev-icons-result-component class="icon"></dev-icons-result-component>
 </atomic-result-section-visual>
-  
-<atomic-result-section-title>
 
+<atomic-result-section-title>
   <atomic-result-link target="blank"></atomic-result-link>
-  <atomic-field-condition must-match-is-top-result="true" >
-      <atomic-result-badge label="Featured" class="Featured"></atomic-result-badge>
+  <atomic-field-condition must-match-is-top-result="true">
+    <atomic-result-badge
+      label="Featured"
+      class="Featured"
+    ></atomic-result-badge>
   </atomic-field-condition>
-  <atomic-field-condition must-match-is-recommendation="true" >
-      <atomic-result-badge label="ML Recommendation" class="Recommended"></atomic-result-badge>
+  <atomic-field-condition must-match-is-recommendation="true">
+    <atomic-result-badge
+      label="ML Recommendation"
+      class="Recommended"
+    ></atomic-result-badge>
   </atomic-field-condition>
 </atomic-result-section-title>
 
 <atomic-result-section-excerpt>
   <atomic-result-text field="excerpt"></atomic-result-text>
 </atomic-result-section-excerpt>
-
 
 <atomic-result-section-bottom-metadata>
   <atomic-result-fields-list>
@@ -102,14 +105,13 @@
       <atomic-result-date></atomic-result-date>
     </span>
   </atomic-result-fields-list>
-  
 </atomic-result-section-bottom-metadata>
 
 <atomic-result-section-bottom-line class="printuri">
-    <code-search-preview-result-component></code-search-preview-result-component>
-    <find-usage-result-component></find-usage-result-component>
-    <atomic-result-printable-uri target="_blank" class="print"></atomic-result-printable-uri>  
+  <code-search-preview-result-component></code-search-preview-result-component>
+  <find-usage-result-component></find-usage-result-component>
+  <atomic-result-printable-uri
+    target="_blank"
+    class="print"
+  ></atomic-result-printable-uri>
 </atomic-result-section-bottom-line>
-
-
-

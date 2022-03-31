@@ -9,23 +9,43 @@
       src="https://static.cloud.coveo.com/atomic/v1/atomic.esm.js"
     ></script>
     <link href="/build/app.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css"
+    />
     <!-- BEGIN CODE SEARCH STYLESHEET -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.0/build/styles/default.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.0/build/styles/default.min.css"
+    />
     <!-- END CODE SEARCH STYLESHEET -->
 
     <script type="module" src="/build/app.esm.js"></script>
     <script type="module" src="/build/index.esm.js"></script>
-    <link rel="icon" type="image/x-icon" href="cocos.ico">
+    <link rel="icon" type="image/x-icon" href="cocos.ico" />
   </head>
   <body>
-    
     <atomic-search-interface id="search">
-      <div class="header-bg"><img src="/cocos.png" style="float:right;height:80px;padding-right:15px"/><code-search-component id="codesearch"></code-search-component></div>
-      <atomic-search-box><atomic-search-box-recent-queries></atomic-search-box-recent-queries></atomic-search-box>
+      <div class="header-bg">
+        <img
+          src="/cocos.png"
+          style="float: right; height: 80px; padding-right: 15px"
+        /><code-search-component id="codesearch"></code-search-component>
+      </div>
+      <atomic-search-box
+        ><atomic-search-box-recent-queries></atomic-search-box-recent-queries
+      ></atomic-search-box>
       <atomic-facet-manager>
-        <atomic-category-facet field="code_folders" delimiting-character="|" base-path="GitHub" label="Folders"></atomic-category-facet>
-        <atomic-color-facet field="code_extension" label="File Type"></atomic-color-facet>
+        <atomic-category-facet
+          field="code_folders"
+          delimiting-character="|"
+          base-path="GitHub"
+          label="Folders"
+        ></atomic-category-facet>
+        <atomic-color-facet
+          field="code_extension"
+          label="File Type"
+        ></atomic-color-facet>
         <atomic-facet field="code_origin" label="Origin"></atomic-facet>
         <atomic-facet field="code_org" label="Org"></atomic-facet>
         <atomic-facet field="code_repo" label="Repo"></atomic-facet>
@@ -36,7 +56,7 @@
       <div class="topbar">
         <atomic-query-summary enable-duration="false"></atomic-query-summary>
         <atomic-refine-toggle></atomic-refine-toggle>
-        
+
         <atomic-sort-dropdown>
           <atomic-sort-expression
             label="relevance"
@@ -49,7 +69,11 @@
         </atomic-sort-dropdown>
       </div>
       <div class="results">
-        <span class="indexeditems">The following (public accessible) repositories are indexed from GitHub: Coveo, CoveoOSS, Coveo-Labs, Coveo-Turbo, QubitProducts. Want more? Contact Wim...</span>
+        <span class="indexeditems"
+          >The following (public accessible) repositories are indexed from
+          GitHub: Coveo, CoveoOSS, Coveo-Labs, Coveo-Turbo, QubitProducts. Want
+          more? Contact Wim...</span
+        >
         <atomic-did-you-mean></atomic-did-you-mean>
         <results-manager></results-manager>
       </div>

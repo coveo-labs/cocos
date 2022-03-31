@@ -1,15 +1,14 @@
-import {Component, h} from '@stencil/core';
-import defaultTemplate from './default.html';
+import { Component, h } from "@stencil/core";
+import defaultTemplate from "./default.html";
 
 /**
  * Component used to manage results & result templates.
  * See https://docs.coveo.com/en/atomic/latest/usage/create-a-result-list/
  */
 @Component({
-  tag: 'results-manager',
+  tag: "results-manager",
   shadow: false,
 })
-
 export class ResultsManager {
   public render() {
     return (
@@ -17,12 +16,6 @@ export class ResultsManager {
         <atomic-result-template>
           <template innerHTML={defaultTemplate}></template>
         </atomic-result-template>
-        {/*
-        <atomic-result-template
-        must-match-sourcetype="Salesforce">
-          <template innerHTML={anotherTemplate}></template>
-        </atomic-result-template>
-        */}
       </atomic-result-list>
     );
   }
