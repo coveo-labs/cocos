@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 code-search-component {
   font-family: var(--atomic-font-family);
   font-size: small;
@@ -9,12 +13,14 @@ code-search-component {
   margin-top: 5px;
   width: 120px;
 }
+
 @media only screen and (max-width: 1330px) {
   code-search-component {
     float: left;
     margin-left: 15;
   }
 }
+
 @media only screen and (max-width: 1000px) {
   code-search-component {
     float: none;
@@ -45,21 +51,25 @@ code-search-component {
   right: -43px;
   top: 3px;
 }
+
 /* Hide default HTML checkbox */
 .switch input {
   display: none;
 }
+
 .codeSearch input {
   transform: scale(2);
   line-height: 10px;
   height: 10px;
   vertical-align: middle;
 }
+
 .codeSearch label {
   padding-left: 5px;
   line-height: 15px;
   vertical-align: middle;
 }
+
 /* The slider */
 .slider {
   position: absolute;
@@ -85,15 +95,15 @@ code-search-component {
   transition: 0.4s;
 }
 
-input:checked + .slider {
+input:checked+.slider {
   background-color: #2196f3;
 }
 
-input:focus + .slider {
+input:focus+.slider {
   box-shadow: 0 0 1px #2196f3;
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
   -webkit-transform: translateX(16px);
   -ms-transform: translateX(16px);
   transform: translateX(16px);
