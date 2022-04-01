@@ -57,6 +57,7 @@ def getClassNames(fieldtoset, content, regex):
             result=[]
     document.add_meta_data({fieldtoset:result}) 
 
+#i++; --> iX32XX32XX33X
 def replaceCharacters(text):
   new_text=''
   pattern = re.compile("[A-Za-z0-9.\(\), ]+")

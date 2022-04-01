@@ -56,20 +56,26 @@ export class FindUsageResultComponent {
     }
   }
 
-  private findUsage() {
-    let searchString = "";
-    //Strip prefix and suffix
+  private getFieldContents() {
+    let contents = "";
     if (this.field) {
       if (this.field == "title") {
-        searchString = this.result?.title || "";
+        contents = this.result?.title || "";
       } else {
         if (this.result?.raw[this.field]) {
-          searchString = Array.isArray(this.result.raw[this.field])
+          contents = Array.isArray(this.result.raw[this.field])
             ? (this.result.raw[this.field] as Array<string>).join(" OR ")
             : (this.result.raw[this.field] as string);
         }
       }
     }
+    return contents;
+  }
+
+  private findUsage() {
+    let searchString = "";
+    //Strip prefix and suffix
+    searchString = this.getFieldContents();
     try {
       if (searchString.includes(".")) {
         searchString = searchString
@@ -87,6 +93,10 @@ export class FindUsageResultComponent {
   public render() {
     // Do not render the component until the result object has been resolved.
     if (!this.result) {
+      return;
+    }
+    // Do not render if the field is not there
+    if (this.getFieldContents() == "") {
       return;
     }
     let icon = (
