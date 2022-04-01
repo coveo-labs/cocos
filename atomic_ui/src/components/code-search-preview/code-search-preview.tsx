@@ -108,11 +108,8 @@ export class CodeSearchPreviewResultComponent {
     }
     return (
       <div>
-        <h1 class="text-3xl font-bold underline">Hello world!</h1>
-        <div>
-          {icon}
-          {loader}
-        </div>
+        {icon}
+        {loader}
       </div>
     );
   }
