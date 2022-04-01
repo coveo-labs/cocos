@@ -4,7 +4,7 @@ import {
   loadSearchAnalyticsActions,
   loadQueryActions,
 } from "@coveo/atomic/headless";
-import { Component, h, Element, State } from "@stencil/core";
+import { Component, h, Element, State, Prop } from "@stencil/core";
 import { resultContext } from "@coveo/atomic";
 import { Bindings, initializeBindings } from "@coveo/atomic";
 /**
@@ -24,6 +24,9 @@ export class FindUsageResultComponent {
   public controller: any;
   @State() private result?: Result;
   @Element() private host!: Element;
+  @Prop() public field?: string;
+  @Prop() public tooltip?: string;
+  @Prop() public icon?: string;
 
   public async connectedCallback() {
     try {
@@ -55,15 +58,26 @@ export class FindUsageResultComponent {
 
   private findUsage() {
     let searchString = "";
-    //Use the title of the result
     //Strip prefix and suffix
-    searchString = this.result?.title || "";
+    if (this.field) {
+      if (this.field == "title") {
+        searchString = this.result?.title || "";
+      } else {
+        if (this.result?.raw[this.field]) {
+          searchString = Array.isArray(this.result.raw[this.field])
+            ? (this.result.raw[this.field] as Array<string>).join(" OR ")
+            : (this.result.raw[this.field] as string);
+        }
+      }
+    }
     try {
-      searchString = searchString
-        .split(".")
-        .slice(0, -1)
-        .join(".")
-        .substring(searchString.lastIndexOf("/") + 1);
+      if (searchString.includes(".")) {
+        searchString = searchString
+          .split(".")
+          .slice(0, -1)
+          .join(".")
+          .substring(searchString.lastIndexOf("/") + 1);
+      }
     } catch (error) {
       //Do nothing
     }
@@ -77,8 +91,8 @@ export class FindUsageResultComponent {
     }
     let icon = (
       <img
-        src="findusage.svg"
-        title="Search usage of this file"
+        src={this.icon}
+        title={this.tooltip}
         part="image"
         onClick={() => this.findUsage()}
       ></img>

@@ -12,7 +12,7 @@ import defaultTemplate from "./default.html";
 export class ResultsManager {
   public render() {
     return (
-      <atomic-result-list fields-to-include="code_origin,code_org,code_repo,code_branch,code_extension">
+      <atomic-result-list fields-to-include="code_classnames, code_origin,code_org,code_repo,code_branch,code_extension">
         <atomic-result-template>
           <template innerHTML={defaultTemplate}></template>
         </atomic-result-template>

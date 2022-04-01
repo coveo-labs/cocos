@@ -36,6 +36,26 @@ def getMetaAll(fieldtoset, content, regex):
             result=''  
     return result   
 
+def getClassNames(fieldtoset, content, regex):
+    result=[]
+    if (re.search(regex, content)!='None'):
+        try:
+            matches=re.finditer(regex, content, re.MULTILINE)
+            for matchNum, match in enumerate(matches, start=1):
+              if (match.group(1)):
+                print (match.group(1))
+                result.append(match.group(1))
+              if (match.group(2)):
+                print (match.group(2))
+                result.append(match.group(2))
+              if (match.group(3)):
+                print (match.group(3))
+                result.append(match.group(3))
+            #document.add_meta_data({fieldtoset:result})
+            #document.log(fieldtoset+' set to: '+result)
+        except:
+            result=[]
+    document.add_meta_data({fieldtoset:result}) 
 
 def replaceCharacters(text):
   new_text=''
@@ -68,6 +88,7 @@ try:
 except:
   pass
 
+
 # 3. Count the lines and replace special characters
 new_data=[]
 counter=1
@@ -77,6 +98,8 @@ for line in alldata:
 
 document.add_meta_data({'code_lines': counter-1})
 document.add_meta_data({'code_facet': new_data})
+getClassNames("code_classnames", alltext, r"^[\w ]*class (\w*)|^[\w ]*interface (\w*)|^[\w ]*namespace (\w*)")
+
 # 4. Write back to documentdata
 # 4.1 Get a modifiable stream
 modified_stream = document.DataStream('body_text')

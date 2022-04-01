@@ -162,6 +162,13 @@ export class CodeSearchComponent {
         body.q = this.replaceQuery(body.q);
         if (this.checkedDebug) body.debug = true;
         if (this.checkedDQ) {
+          //Also add a QRE to boost the original to a higher position
+          let QRE = ` $qre(expression:'${body.q}',modifier:200)`;
+          if (body.aq) {
+            body.aq += QRE;
+          } else {
+            body.aq = QRE;
+          }
           body.dq =
             this.cleanQuery(this.currentSearchString) + this.buildAQ(body);
         }

@@ -29,6 +29,9 @@ export namespace Components {
         "currentResult"?: Result;
     }
     interface FindUsageResultComponent {
+        "field"?: string;
+        "icon"?: string;
+        "tooltip"?: string;
     }
     interface RecentlyOpenedComponent {
     }
@@ -107,6 +110,9 @@ declare namespace LocalJSX {
         "currentResult"?: Result;
     }
     interface FindUsageResultComponent {
+        "field"?: string;
+        "icon"?: string;
+        "tooltip"?: string;
     }
     interface RecentlyOpenedComponent {
     }

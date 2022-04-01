@@ -100,6 +100,13 @@
       <atomic-result-text field="code_branch"></atomic-result-text>
     </atomic-field-condition>
 
+    <atomic-field-condition class="field" if-defined="code_classnames">
+      <span class="field-label">
+        <atomic-text value="Class/Namespaces"></atomic-text>:
+      </span>
+      <atomic-result-text field="code_classnames"></atomic-result-text>
+    </atomic-field-condition>
+
     <span class="field">
       <span class="field-label">Date:</span>
       <atomic-result-date></atomic-result-date>
@@ -109,7 +116,16 @@
 
 <atomic-result-section-bottom-line class="printuri">
   <code-search-preview-result-component></code-search-preview-result-component>
-  <find-usage-result-component></find-usage-result-component>
+  <find-usage-result-component
+    field="title"
+    tooltip="Search usage of this file using the title"
+    icon="findusage.svg"
+  ></find-usage-result-component>
+  <find-usage-result-component
+    field="code_classnames"
+    tooltip="Search with class/namespaces"
+    icon="findclass.svg"
+  ></find-usage-result-component>
   <atomic-result-printable-uri
     target="_blank"
     class="print"
